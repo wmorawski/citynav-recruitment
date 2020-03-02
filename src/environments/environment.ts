@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  poznanApi: 'http://www.poznan.pl/mim/plan/map_service.html'
 };
 
 /*

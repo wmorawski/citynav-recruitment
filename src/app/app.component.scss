@@ -1,0 +1,12 @@
+button[mat-icon-button] {
+  width: auto;
+  height: auto;
+}
+
+mat-icon {
+  &[svgIcon='back-arrow'] {
+    width: 14px;
+    height: 10px;
+    line-height: 10px;
+  }
+}

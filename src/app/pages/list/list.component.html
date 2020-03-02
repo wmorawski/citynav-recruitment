@@ -1,0 +1,43 @@
+<cdk-virtual-scroll-viewport itemSize="153" class="virtual-scroll">
+  <mat-card
+    class="bike-card"
+    *cdkVirtualFor="let bikeStation of (bikeStations | async)?.features"
+  >
+    <mat-card-title>{{ bikeStation.properties.label }}</mat-card-title>
+    <mat-card-subtitle>500m &bull; Aleja Pokoju 20, Kraków</mat-card-subtitle>
+    <mat-card-content>
+      <div class="card-row">
+        <div class="card-column">
+          <div class="card-row">
+            <div class="card-column">
+              <mat-icon svgIcon="bike"></mat-icon>
+              <p>Available bikes</p>
+            </div>
+          </div>
+          <div class="card-row">
+            <div class="card-column">
+              <p class="available-count available-count-primary">
+                {{ bikeStation.properties.bikes }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="card-column">
+          <div class="card-row">
+            <div class="card-column">
+              <mat-icon svgIcon="unlock"></mat-icon>
+              <p>Available places</p>
+            </div>
+          </div>
+          <div class="card-row">
+            <div class="card-column">
+              <p class="available-count available-count-accent">
+                {{ bikeStation.properties.free_racks }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</cdk-virtual-scroll-viewport>
