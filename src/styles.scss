@@ -1,68 +1,79 @@
 @import '~@angular/material/theming';
-$citynavRecruitment-typography: mat-typography-config( $font-family: "'SFPro Display', Roboto, 'Helvetica Neue', sans-serif");
+$citynavRecruitment-typography: mat-typography-config(
+  $font-family: "'SFPro Display', Roboto, 'Helvetica Neue', sans-serif"
+);
 @include mat-core($citynavRecruitment-typography);
-$mat-black: ( 900: #000, contrast: ( 900: white));
+$mat-black: (
+  900: #000,
+  contrast: (
+    900: white
+  )
+);
 $citynavRecruitment-primary: mat-palette($mat-black, 900);
 $citynavRecruitment-accent: mat-palette($mat-green, A400);
 $citynavRecruitment-warn: mat-palette($mat-red);
-$citynavRecruitment-theme: mat-light-theme( $citynavRecruitment-primary, $citynavRecruitment-accent, $citynavRecruitment-warn);
+$citynavRecruitment-theme: mat-light-theme(
+  $citynavRecruitment-primary,
+  $citynavRecruitment-accent,
+  $citynavRecruitment-warn
+);
 @include angular-material-theme($citynavRecruitment-theme);
 @font-face {
-    font-family: 'SFPro Display';
-    src: url('/assets/fonts/SFProDisplay-Medium.ttf');
+  font-family: 'SFPro Display';
+  src: url('/assets/fonts/SFProDisplay-Medium.ttf');
 }
 
 @font-face {
-    font-family: 'Helvetica Neue Bold';
-    src: url('/assets/fonts/HelveticaNeueBold.ttf');
+  font-family: 'Helvetica Neue Bold';
+  src: url('/assets/fonts/HelveticaNeueBold.ttf');
 }
 
 @font-face {
-    font-family: 'Helvetica Neue';
-    src: url('/assets/fonts/HelveticaNeueLight.ttf');
+  font-family: 'Helvetica Neue';
+  src: url('/assets/fonts/HelveticaNeueLight.ttf');
 }
 
 html,
 body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    font-family: 'SFPro Display', Roboto, 'Helvetica Neue', sans-serif;
+  margin: 0;
+  font-family: 'SFPro Display', Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    width: 95%;
-    justify-content: center;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .card-row {
-    display: flex;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .card-column {
     flex: 1;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    .card-column {
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        p {
-            color: #676767;
-            cursor: default;
-            &.available-count {
-                font-family: 'Helvetica Neue';
-                font-size: 50px;
-                font-weight: 400;
-                color: #3f3f3f;
-            }
-            &.available-count-primary {
-                color: mat-color($citynavRecruitment-accent);
-            }
-        }
+    justify-content: center;
+    text-align: center;
+    p {
+      color: #676767;
+      cursor: default;
+      &.available-count {
+        font-family: 'Helvetica Neue';
+        font-size: 50px;
+        font-weight: 400;
+        color: #3f3f3f;
+      }
+      &.available-count-primary {
+        color: mat-color($citynavRecruitment-accent);
+      }
     }
+  }
 }
