@@ -20,17 +20,17 @@ $citynavRecruitment-theme: mat-light-theme(
 @include angular-material-theme($citynavRecruitment-theme);
 @font-face {
   font-family: 'SFPro Display';
-  src: url('/assets/fonts/SFProDisplay-Medium.ttf');
+  src: url('assets/fonts/SFProDisplay-Medium.ttf');
 }
 
 @font-face {
   font-family: 'Helvetica Neue Bold';
-  src: url('/assets/fonts/HelveticaNeueBold.ttf');
+  src: url('assets/fonts/HelveticaNeueBold.ttf');
 }
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('/assets/fonts/HelveticaNeueLight.ttf');
+  src: url('assets/fonts/HelveticaNeueLight.ttf');
 }
 
 .leaflet-control-locate-location circle {
