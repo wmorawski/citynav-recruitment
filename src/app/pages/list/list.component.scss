@@ -1,9 +1,9 @@
 .virtual-scroll {
-  height: calc(100vh - 64px);
+  height: calc((var(--vh, 1vh) * 100) - 64px);
 }
 
 @media (max-width: 599px) {
   .virtual-scroll {
-    height: calc(100vh - 56px);
+    height: calc((var(--vh, 1vh) * 100) - 56px);
   }
 }

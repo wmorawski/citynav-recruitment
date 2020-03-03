@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { DistancePipe } from './pipes/distance.pipe';
+import { ShortNumberPipe } from './pipes/short-number.pipe';
 @NgModule({
-  declarations: [BikeStationDetailsComponent],
+  declarations: [BikeStationDetailsComponent, DistancePipe, ShortNumberPipe],
   imports: [CommonModule, MatCardModule, MatIconModule],
 
-exports: [BikeStationDetailsComponent]
+  exports: [BikeStationDetailsComponent]
 })
 export class SharedModule {}

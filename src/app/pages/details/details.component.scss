@@ -1,11 +1,11 @@
 .full-height {
-  height: calc(100vh - 64px);
-  display: flex;
+  height: calc((var(--vh, 1vh) * 100) - 64px);
+  display: grid;
+  grid-template-columns: 2fr;
+  grid-template-rows: 1fr min-content;
   flex: 1;
-  align-items: center;
+
   .card {
-    align-self: flex-end;
-    display: flex;
     flex: 1;
     app-bike-station-details {
       width: 100%;
@@ -15,6 +15,6 @@
 
 @media (max-width: 599px) {
   .full-height {
-    height: calc(100vh - 56px);
+    height: calc((var(--vh, 1vh) * 100) - 56px);
   }
 }

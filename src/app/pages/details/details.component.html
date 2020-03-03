@@ -1,4 +1,11 @@
 <div class="full-height" *ngIf="bikeStation">
+  <div
+    style="height: 100%;"
+    leaflet
+    [leafletOptions]="leafletOptions"
+    [leafletLayers]="leafletLayers"
+    (leafletMapReady)="onMapReady($event)"
+  ></div>
   <div class="card">
     <app-bike-station-details
       [bikeStation]="bikeStation"

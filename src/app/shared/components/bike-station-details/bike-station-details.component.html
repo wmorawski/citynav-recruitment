@@ -1,9 +1,19 @@
 <mat-card [ngClass]="{ 'bike-card': true, 'details-card': isDetails }">
   <mat-card-title>{{ bikeStation.properties.label }}</mat-card-title>
-  <mat-card-subtitle
-    ><span class="subtitle-darker">500m</span><span class="middot"></span>Aleja
-    Pokoju 20, Kraków</mat-card-subtitle
-  >
+  <mat-card-subtitle>
+    <ng-container *ngIf="position">
+      <span class="subtitle-darker">
+        {{
+          bikeStation.geometry.coordinates | distance: position | shortNumber
+        }}
+      </span>
+      <span class="middot"></span>
+    </ng-container>
+    <ng-container *ngIf="((place | async)?.features)[0] as foundPlace">
+      {{ foundPlace.text }} {{ foundPlace.address }},
+      {{ foundPlace.context[1]?.text }}
+    </ng-container>
+  </mat-card-subtitle>
   <mat-card-content>
     <div class="card-row">
       <div class="card-column">
