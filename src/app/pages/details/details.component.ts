@@ -97,7 +97,7 @@ export class DetailsComponent implements OnInit {
           icon: divIcon({
             iconSize: [128, 36],
             iconAnchor: [18, 41],
-            html: `<img src='/assets/icons/marker.svg' /><span class='bikes'>${this.bikeStation.properties.bikes}</span>`,
+            html: `<img src='assets/icons/marker.svg' /><span class='bikes'>${this.bikeStation.properties.bikes}</span>`,
             className: 'citynav-icon'
           })
         }
