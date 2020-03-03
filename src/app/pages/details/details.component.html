@@ -1,5 +1,8 @@
-<div class="full-height">
-    <div class="card">
-        <app-bike-station-details [bikeStation]="bikeStation"></app-bike-station-details>
-    </div>
+<div class="full-height" *ngIf="bikeStation">
+  <div class="card">
+    <app-bike-station-details
+      [bikeStation]="bikeStation"
+      [isDetails]="true"
+    ></app-bike-station-details>
+  </div>
 </div>

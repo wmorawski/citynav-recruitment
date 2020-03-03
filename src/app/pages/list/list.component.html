@@ -1,7 +1,7 @@
 <cdk-virtual-scroll-viewport itemSize="153" class="virtual-scroll">
-    <mat-card class="bike-card" *cdkVirtualFor="let bikeStation of (bikeStations | async)?.features" (click)="navigateWithData(bikeStation)">
-
-        <app-bike-station-details [bikeStation]="bikeStation"></app-bike-station-details>
-
-    </mat-card>
+  <app-bike-station-details
+    *cdkVirtualFor="let bikeStation of (bikeStations | async)?.features"
+    [routerLink]="['/details', bikeStation.id]"
+    [bikeStation]="bikeStation"
+  ></app-bike-station-details>
 </cdk-virtual-scroll-viewport>

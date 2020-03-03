@@ -1,36 +1,41 @@
-<mat-card-title>{{ bikeStation.properties.label }}</mat-card-title>
-<mat-card-subtitle>500m &bull; Aleja Pokoju 20, Kraków</mat-card-subtitle>
-<mat-card-content>
+<mat-card [ngClass]="{ 'bike-card': true, 'details-card': isDetails }">
+  <mat-card-title>{{ bikeStation.properties.label }}</mat-card-title>
+  <mat-card-subtitle
+    ><span class="subtitle-darker">500m</span><span class="middot"></span>Aleja
+    Pokoju 20, Kraków</mat-card-subtitle
+  >
+  <mat-card-content>
     <div class="card-row">
-        <div class="card-column">
-            <div class="card-row">
-                <div class="card-column">
-                    <mat-icon svgIcon="bike"></mat-icon>
-                    <p>Available bikes</p>
-                </div>
-            </div>
-            <div class="card-row">
-                <div class="card-column">
-                    <p class="available-count available-count-primary">
-                        {{ bikeStation.properties.bikes }}
-                    </p>
-                </div>
-            </div>
+      <div class="card-column">
+        <div class="card-row">
+          <div class="card-column">
+            <mat-icon svgIcon="bike"></mat-icon>
+            <p>Available bikes</p>
+          </div>
         </div>
-        <div class="card-column">
-            <div class="card-row">
-                <div class="card-column">
-                    <mat-icon svgIcon="unlock"></mat-icon>
-                    <p>Available places</p>
-                </div>
-            </div>
-            <div class="card-row">
-                <div class="card-column">
-                    <p class="available-count available-count-accent">
-                        {{ bikeStation.properties.free_racks }}
-                    </p>
-                </div>
-            </div>
+        <div class="card-row">
+          <div class="card-column">
+            <p class="available-count available-count-primary">
+              {{ bikeStation.properties.bikes }}
+            </p>
+          </div>
         </div>
+      </div>
+      <div class="card-column">
+        <div class="card-row">
+          <div class="card-column">
+            <mat-icon svgIcon="unlock"></mat-icon>
+            <p>Available places</p>
+          </div>
+        </div>
+        <div class="card-row">
+          <div class="card-column">
+            <p class="available-count available-count-accent">
+              {{ bikeStation.properties.free_racks }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-</mat-card-content>
+  </mat-card-content>
+</mat-card>

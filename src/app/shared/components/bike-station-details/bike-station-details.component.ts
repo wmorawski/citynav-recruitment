@@ -1,4 +1,9 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { BikeStation } from 'src/app/shared/types/bike.types';
 
 @Component({
@@ -9,9 +14,8 @@ import { BikeStation } from 'src/app/shared/types/bike.types';
 })
 export class BikeStationDetailsComponent implements OnInit {
   @Input() bikeStation: BikeStation;
-  constructor() { }
+  @Input() isDetails = false;
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
