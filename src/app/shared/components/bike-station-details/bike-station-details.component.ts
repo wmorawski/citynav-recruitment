@@ -15,9 +15,12 @@ export class BikeStationDetailsComponent implements OnInit {
   constructor(public positionService: PositionService) {}
 
   ngOnInit(): void {
-    this.positionService.getPosition().then(p => {
-      this.position = p;
-    });
+    this.positionService.getPosition().then(
+      p => {
+        this.position = p;
+      },
+      () => {}
+    );
     const [longitude, latitude] = this.bikeStation.geometry.coordinates;
     this.place = this.positionService.getPlace(longitude, latitude);
   }
