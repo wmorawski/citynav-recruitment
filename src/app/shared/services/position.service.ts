@@ -21,7 +21,6 @@ export class PositionService {
   }
 
   public getPlace(longitude: number, latitude: number) {
-    console.log(arguments);
     const params = new HttpParams()
       .set('access_token', environment.mapbox.key)
       .set('types', 'address');
