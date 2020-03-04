@@ -11,7 +11,7 @@ export class PositionService {
   constructor(private readonly http: HttpClient) {
     navigator.geolocation.watchPosition((position) => {
       this.positionChange.next(position);
-    })
+    });
   }
 
   public getPosition() {
