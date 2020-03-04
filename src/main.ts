@@ -10,6 +10,11 @@ import 'leaflet.locatecontrol/dist/L.Control.Locate.css';
 const vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
+window.addEventListener('resize', () => {
+  const height = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${height}px`);
+});
+
 if (environment.production) {
   enableProdMode();
 }

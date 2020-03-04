@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -6,7 +6,13 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class PositionService {
-  constructor(private readonly http: HttpClient) {}
+  public positionChange = new EventEmitter<Position>();
+
+  constructor(private readonly http: HttpClient) {
+    navigator.geolocation.watchPosition((position) => {
+      this.positionChange.next(position);
+    })
+  }
 
   public getPosition() {
     return new Promise<Position>((resolve, reject) => {
@@ -15,6 +21,7 @@ export class PositionService {
   }
 
   public getPlace(longitude: number, latitude: number) {
+    console.log(arguments);
     const params = new HttpParams()
       .set('access_token', environment.mapbox.key)
       .set('types', 'address');
